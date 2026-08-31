@@ -468,7 +468,7 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
 <p>Tag every field with its provenance and its expected decay rate. Not every record — every field. A record is a blend, so a single freshness value for the whole thing is a lie.</p>
 <div class="out">Output <b>content class registry</b></div></div>
 <div class="step"><div class="n">STEP 02</div><h3>Stamp</h3>
-<p>Carry <span class="mono">last_verified</span> and <span class="mono">verified_by</span> at field level through the pipeline. Today a Trail Report has a date. An authored difficulty rating does not.</p>
+<p>Promote the stamp from record to field. An <span class="mono">OffroadRoute</span> already carries <span class="mono">updatedAt</span> and <span class="mono">submittedBy</span>, but record-scoped — a description fix moves the same clock as a re-drive, and the app renders neither. The ask is granularity and exposure, not a new column.</p>
 <div class="out">Output <b>schema change</b></div></div>
 <div class="step"><div class="n">STEP 03</div><h3>Score</h3>
 <p>Confidence per field from age against its own clock, weighted by consequence. Regulatory and ownership decay hurts more than imagery decay. Roll up to a record score.</p>
