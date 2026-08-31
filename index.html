@@ -716,9 +716,6 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
 (function(){
   var SVG = '<svg class="chev" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><polygon points="1,3.2 11,3.2 6,9.6"></polygon></svg>';
   var heads = Array.prototype.slice.call(document.querySelectorAll('.shead[id]'));
-  var KEY = 'onx-collapsed-v1';
-  var saved = {};
-  try { saved = JSON.parse(sessionStorage.getItem(KEY) || '{}'); } catch(e) {}
 
   heads.forEach(function(h){
     var body = document.createElement('div');
@@ -734,10 +731,8 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
     function set(closed){
       h.classList.toggle('closed', closed);
       h.setAttribute('aria-expanded', String(!closed));
-      saved[h.id] = closed;
-      try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
     }
-    set(!!saved[h.id]);
+    set(true);
 
     h.addEventListener('click', function(){ set(!h.classList.contains('closed')); });
     h.addEventListener('keydown', function(e){
@@ -758,13 +753,24 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
     heads.forEach(function(h){
       h.classList.toggle('closed', anyOpen);
       h.setAttribute('aria-expanded', String(!anyOpen));
-      saved[h.id] = anyOpen;
     });
-    try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
     label();
     if (anyOpen) window.scrollTo({top:0, behavior:'smooth'});
   });
   heads.forEach(function(h){ h.addEventListener('click', label); });
+
+  function openHash(){
+    var id = (location.hash || '').replace('#','');
+    if (!id) return;
+    var t = document.getElementById(id);
+    if (!t || !t.classList.contains('shead')) return;
+    t.classList.remove('closed');
+    t.setAttribute('aria-expanded','true');
+    label();
+    t.scrollIntoView();
+  }
+  openHash();
+  window.addEventListener('hashchange', openHash);
 })();
 </script>
 </body>
