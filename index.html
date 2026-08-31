@@ -631,7 +631,7 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
   var heads = Array.prototype.slice.call(document.querySelectorAll('.shead[id]'));
   var KEY = 'onx-collapsed-v1';
   var saved = {};
-  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+  try { saved = JSON.parse(sessionStorage.getItem(KEY) || '{}'); } catch(e) {}
 
   heads.forEach(function(h){
     var body = document.createElement('div');
@@ -648,7 +648,7 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
       h.classList.toggle('closed', closed);
       h.setAttribute('aria-expanded', String(!closed));
       saved[h.id] = closed;
-      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+      try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
     }
     set(!!saved[h.id]);
 
@@ -673,7 +673,7 @@ section:has(> .wrap > .shead.closed){padding:18px 0}section:has(> .wrap > .shead
       h.setAttribute('aria-expanded', String(!anyOpen));
       saved[h.id] = anyOpen;
     });
-    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+    try { sessionStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
     label();
     if (anyOpen) window.scrollTo({top:0, behavior:'smooth'});
   });
