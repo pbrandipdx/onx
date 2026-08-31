@@ -13,9 +13,9 @@ An independent analysis of onX Offroad's content and data systems, prepared as p
 | | |
 |---|---|
 | 01 | Where the content comes from — five acquisition channels |
-| 02 | How it gets from source to screen — the pipeline, and what it adds up to |
-| 03 | Five questions, five shelf lives |
-| 04 | What the four apps share |
+| 02 | What the four apps share |
+| 03 | How it gets from source to screen — the pipeline, and what it adds up to |
+| 04 | The big five user questions — five questions, five shelf lives |
 | 05 | How content gets paid for |
 | 06 | How the competition stays current |
 
@@ -23,18 +23,21 @@ An independent analysis of onX Offroad's content and data systems, prepared as p
 
 | | |
 |---|---|
-| 07 | The read |
-| 08 | Where I'd focus first |
-| 09 | How I'd know it worked |
-| 10 | Beyond Offroad |
+| 07 | When tragedy strikes, onX needs to be the source of truth |
+| 08 | The read |
+| 09 | Where I'd focus first |
+| 10 | How I'd know it worked |
+| 11 | Beyond Offroad |
 
-Section headers collapse, so the page can be read as a ten-line outline or opened one section at a time.
+Section headers collapse, so the page can be read as an eleven-line outline or opened one section at a time.
 
 ---
 
 ## Sourcing
 
-Claims come from onX's own published materials — feature pages, support articles, pricing and FAQ pages — alongside federal data documentation (USFS, BLM, USGS) and a direct audit of the onX Offroad web app.
+Claims come from onX's own published materials — feature pages, support articles, pricing and FAQ pages — alongside federal data documentation (USFS, BLM, USGS), live pulls from the National Park Service Data API and its WZDx road-event feed, and a direct audit of the onX Offroad web app.
+
+Section 07 is built on screenshots of five apps taken on the same geography within six minutes of each other on 31 August 2026, two days after the Bright Angel Canyon flash flood.
 
 Where something is inferred rather than verified, the document says so. Where a number is an estimate rather than an onX figure, it says that too.
 
